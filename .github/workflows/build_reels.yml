@@ -1,0 +1,83 @@
+# Builds the 300 Wealthshift affirmation reels on GitHub, so no large video
+# upload is ever needed from a laptop. Everything it needs already lives here:
+# the card images in wealthshift/, and reel_bg.mp4 (the Canva coin animation,
+# which also supplies the music baked into every reel).
+#
+# Run it from the Actions tab. Leave the inputs alone to build all 300.
+
+name: Build Wealthshift Reels
+
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "First affirmation number"
+        required: false
+        default: "1"
+      end:
+        description: "Last affirmation number"
+        required: false
+        default: "300"
+      force:
+        description: "true = rebuild reels that already exist"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          command -v ffmpeg >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y ffmpeg; }
+          pip install --quiet pillow
+
+      - name: Verify the background clip
+        run: |
+          set -euo pipefail
+          if [ ! -f reel_bg.mp4 ]; then
+            echo "::error::reel_bg.mp4 is missing. Export the Canva design and upload it to the repo root."
+            exit 1
+          fi
+          # A silent track means the Canva export had no music on it. Warn loudly
+          # rather than quietly shipping 300 silent reels.
+          VOL=$(ffmpeg -hide_banner -i reel_bg.mp4 -map 0:a -af volumedetect -f null /dev/null 2>&1 \
+                | grep -o "mean_volume: [-0-9.]*" | cut -d" " -f2 || echo "none")
+          echo "Background audio mean volume: ${VOL}"
+          case "$VOL" in
+            none|-9[0-9]*|-inf) echo "::warning::reel_bg.mp4 has no audible audio — reels will be silent." ;;
+          esac
+
+      - name: Build reels
+        env:
+          IN_START: ${{ inputs.start }}
+          IN_END: ${{ inputs.end }}
+          IN_FORCE: ${{ inputs.force }}
+        run: |
+          set -euo pipefail
+          ARGS="--start ${IN_START:-1} --end ${IN_END:-300}"
+          if [ "${IN_FORCE:-false}" = "true" ]; then ARGS="$ARGS --force"; fi
+          python make_reels.py $ARGS
+
+      - name: Commit the reels
+        env:
+          IN_START: ${{ inputs.start }}
+          IN_END: ${{ inputs.end }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reels
+          if git diff --cached --quiet; then
+            echo "No new reels to commit."
+          else
+            git commit -m "Build reels ${IN_START:-1}-${IN_END:-300}"
+            git push
+          fi
