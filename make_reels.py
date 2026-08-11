@@ -16,8 +16,10 @@ CARD_W    = 940      # card width inside the frame
 BG_DIM    = 0.45     # darkening applied to the background behind the card
 FRONT     = 0.92     # strength of coins passing in front, outside the card
 OVER_CARD = 0.30     # fraction of that allowed across the card itself
-LOOPS     = 2        # repeats of the 5s background clip
-DURATION  = 10.0     # final reel length, seconds
+LOOPS     = 1        # plays of the background clip. Keep at 1: the clip now
+                     # carries music, and repeating it restarts the track
+                     # audibly mid-reel. Instagram loops reels anyway.
+DURATION  = 5.0      # final reel length, seconds — matches the Canva export
 
 BG    = "reel_bg.mp4"
 CARDS = "wealthshift"
