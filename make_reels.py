@@ -2,7 +2,7 @@
 """Composite Wealthshift affirmation cards onto the animated coin background.
 
 Run by .github/workflows/build_reels.yml. Reads reel_bg.mp4 (1080x1350, coins on
-black, music baked in) plus the cards in wealthshift/, and writes 1080x1920 reels
+black) plus the cards in wealthshift/, and writes 1080x1920 reels
 to reels/.
 
   python make_reels.py --start 1 --end 300
@@ -79,7 +79,8 @@ def render(card_png, mask_png, out):
         ["ffmpeg", "-y", "-loglevel", "error",
          "-stream_loop", str(LOOPS - 1), "-i", BG,
          "-loop", "1", "-i", card_png, "-loop", "1", "-i", mask_png,
-         "-filter_complex", FILTER, "-map", "[v]", "-map", "0:a?",
+         "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=48000",
+         "-filter_complex", FILTER, "-map", "[v]", "-map", "3:a",
          "-t", str(DURATION), "-c:v", "libx264", "-profile:v", "high",
          "-pix_fmt", "yuv420p", "-crf", "21", "-r", "30",
          "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out],
