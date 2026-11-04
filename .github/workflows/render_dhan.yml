@@ -1,0 +1,51 @@
+# Renders Dhan Dhyaan carousels from dhan/queue.json into dhan/slides/.
+# Runs whenever the queue, config or renderer changes; only changed nights re-render.
+name: Render Dhan Dhyaan slides
+
+on:
+  push:
+    branches: [main]
+    paths: ["dhan/queue.json", "dhan/config.json", "dhan/*.py"]
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "true = re-render every night"
+        required: false
+        default: "false"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render-dhan
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            dhan
+            .github
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install headless Chromium
+        run: |
+          pip install playwright==1.64.1
+          python -m playwright install --with-deps chromium
+      - name: Render
+        run: |
+          if [ "${{ inputs.force }}" = "true" ]; then python dhan/render.py --force; else python dhan/render.py; fi
+      - name: Commit slides
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add dhan/slides
+          git diff --staged --quiet && { echo "nothing new to commit"; exit 0; }
+          git commit -m "Render Dhan Dhyaan slides"
+          git pull --rebase --autostash
+          git push
