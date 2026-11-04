@@ -190,7 +190,7 @@ N = [
 rows = []
 for i, d in enumerate(N, 1):
     rows.append({"Id": f"DD{i:03d}", "Night": i, "Date": (START + datetime.timedelta(days=i - 1)).isoformat(),
-                 **d, "approved": False})
+                 **d, "approved": True})
 out = pathlib.Path(__file__).with_name("queue.json")
 out.write_text(json.dumps(rows, indent=1, ensure_ascii=False), encoding="utf-8")
 print(len(rows), "nights written to", out)
