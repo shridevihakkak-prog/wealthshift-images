@@ -679,7 +679,7 @@
   "ActHead": "Put last month's income next to last month's spending.",
   "ActBody": "Two numbers. If spending is bigger, that's the gap. Seeing it is the first step.",
   "Question": "Which month this year did spending beat income?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD032",
@@ -701,7 +701,7 @@
   "ActHead": "Set one wedding budget for the whole season.",
   "ActBody": "Add up every invite. One total for gifts, clothes and travel. Then keep to it.",
   "Question": "How many weddings are you attending this season?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD033",
@@ -723,7 +723,7 @@
   "ActHead": "Ask someone about the real costs of the life you envy.",
   "ActBody": "Rent, commute, hours, loans. The full picture is usually quieter.",
   "Question": "Whose life sounds like a sweet drum from where you stand?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD034",
@@ -745,7 +745,7 @@
   "ActHead": "Make a family rule: no money decision on a forward.",
   "ActBody": "Wait 48 hours and ask one person you trust who isn't in the group.",
   "Question": "Have you or someone you know lost money to a scheme like this?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD035",
@@ -767,7 +767,7 @@
   "ActHead": "Think of one thing you've replaced three times.",
   "ActBody": "Next time, work out the cost per year of use. The better one may be cheaper.",
   "Question": "What cheap thing have you bought again and again?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD036",
@@ -789,7 +789,7 @@
   "ActHead": "Pick one item you always buy branded.",
   "ActBody": "Try the plain version once. If you can't tell the difference, keep the savings.",
   "Question": "Which brand do you pay extra for without thinking?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD037",
@@ -811,7 +811,7 @@
   "ActHead": "Add up last month's food delivery orders.",
   "ActBody": "Open the app's order history. One total. No guilt, just the number.",
   "Question": "What's your usual late-night order?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD038",
@@ -833,7 +833,7 @@
   "ActHead": "Write your family's monthly “enough” number.",
   "ActBody": "Needs, a little joy, a little saving. One honest figure.",
   "Question": "What does “enough” mean in your home?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD039",
@@ -855,7 +855,7 @@
   "ActHead": "Ask one gentle question tonight.",
   "ActBody": "“What's one money thing you'd like us to do this year?” Then just listen.",
   "Question": "Who handles the money in your home?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD040",
@@ -877,7 +877,7 @@
   "ActHead": "Mute one account that makes you want to spend.",
   "ActBody": "Just one. Notice how your wants change this week.",
   "Question": "Which kind of posts make you feel behind?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD041",
@@ -899,7 +899,7 @@
   "ActHead": "Find the total due on your card statement.",
   "ActBody": "Not the minimum. The total. Write it next to what you can pay this month.",
   "Question": "Did you know the difference between minimum and total due?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD042",
@@ -921,7 +921,7 @@
   "ActHead": "Pick one thing you planned to upgrade.",
   "ActBody": "Wait 30 days and write the date down. If you still need it then, decide calmly.",
   "Question": "What's the oldest thing you own that still works perfectly?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD043",
@@ -943,7 +943,7 @@
   "ActHead": "Start a 7-day wait list.",
   "ActBody": "Anything you want to buy goes on it first. After 7 days, buy only what still matters.",
   "Question": "What did you once wait for that felt sweeter because of it?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD044",
@@ -965,7 +965,7 @@
   "ActHead": "Find out where your parents keep their important papers.",
   "ActBody": "Bank, property, health. Ask gently, over tea. Just where, not how much.",
   "Question": "Have you ever talked to your parents about their money?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD045",
@@ -987,7 +987,7 @@
   "ActHead": "Do one money task you've delayed for months.",
   "ActBody": "Add a nominee, close an old account, read a statement. Just one.",
   "Question": "What money habit do you wish you'd started earlier?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD046",
@@ -1009,7 +1009,7 @@
   "ActHead": "Empty your shopping cart tonight.",
   "ActBody": "If you still want it in three days, it will still be there, or on sale again.",
   "Question": "What's the best sale buy you never used?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD047",
@@ -1031,7 +1031,7 @@
   "ActHead": "Work out what one hour of your work earns.",
   "ActBody": "Monthly take-home divided by hours worked. Use it to price your next want.",
   "Question": "What would you skip if you priced it in hours?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD048",
@@ -1053,7 +1053,7 @@
   "ActHead": "Give a child one small money choice this week.",
   "ActBody": "₹100 for a snack or a toy, their decision. No child at home? Think back to yours.",
   "Question": "What did your parents say when you asked for things?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD049",
@@ -1075,7 +1075,7 @@
   "ActHead": "Name one thing you've been too strict to spend on.",
   "ActBody": "If it's for health or family, plan for it this month.",
   "Question": "Do you lean more towards spending or holding back?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD050",
@@ -1097,7 +1097,7 @@
   "ActHead": "List everyone you'll gift, then set one total.",
   "ActBody": "Divide it fairly. A handwritten note can carry more than a price tag.",
   "Question": "What's the most meaningful gift you've received?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD051",
@@ -1119,7 +1119,7 @@
   "ActHead": "List every demand on your salary.",
   "ActBody": "Family, EMIs, bills, help. Then put your own savings at the top of the list.",
   "Question": "How many people does your income look after?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD052",
@@ -1141,7 +1141,7 @@
   "ActHead": "Keep your family's health papers in one folder.",
   "ActBody": "IDs, reports, any policy papers. Tell one other person where it is.",
   "Question": "Could your family find your important papers tonight?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD053",
@@ -1163,7 +1163,7 @@
   "ActHead": "Pick one two-in-one habit for this week.",
   "ActBody": "Walk, cook, mend or borrow. Note what it saved.",
   "Question": "Which habit saves you money and something else too?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD054",
@@ -1185,7 +1185,7 @@
   "ActHead": "Practise one easy line.",
   "ActBody": "“Shall we split by what we ordered? It's easier for me this month.”",
   "Question": "Do you split equally or by what you ordered?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD055",
@@ -1207,7 +1207,7 @@
   "ActHead": "Decide a small amount to give this month.",
   "ActBody": "To a cause, a helper or a neighbour. Choose it on purpose.",
   "Question": "Who would you like to help this month?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD056",
@@ -1229,7 +1229,7 @@
   "ActHead": "Write one money problem, and one part you control.",
   "ActBody": "Just one part. Even a small one. That's where tomorrow starts.",
   "Question": "Which money problem do you blame on the courtyard?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD057",
@@ -1251,7 +1251,7 @@
   "ActHead": "Write your three biggest spends of the year.",
   "ActBody": "Next to each, write: worth it, or not. Keep the list for January.",
   "Question": "What was your best money decision this year?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD058",
@@ -1273,7 +1273,7 @@
   "ActHead": "Choose one money habit for January only.",
   "ActBody": "One month. Tick a calendar every day you do it.",
   "Question": "What's your one money habit for January?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD059",
@@ -1295,7 +1295,7 @@
   "ActHead": "Spend 20 minutes learning one money topic.",
   "ActBody": "Reading your payslip, how loan interest works, or making a budget. Just 20 minutes.",
   "Question": "Which money topic would you like to understand better?",
-  "approved": false
+  "approved": true
  },
  {
   "Id": "DD060",
@@ -1317,6 +1317,6 @@
   "ActHead": "Read what you wrote on night 30.",
   "ActBody": "Add one more change you've noticed since then.",
   "Question": "Which night's line has stayed with you?",
-  "approved": false
+  "approved": true
  }
 ]

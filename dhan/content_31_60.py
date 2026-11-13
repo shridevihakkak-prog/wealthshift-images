@@ -5,7 +5,7 @@
 import json, datetime, pathlib
 
 START = datetime.date(2026, 11, 6)   # Night 1 = Dhanteras 2026
-APPROVED = False
+APPROVED = True
 
 N = [
  dict(Series="Saying", Label="A saying we grew up with", Hook="“Aamdani atthanni, kharcha rupaiya.”", HookHi="आमदनी अठन्नी, ख़र्चा रुपैया।",
